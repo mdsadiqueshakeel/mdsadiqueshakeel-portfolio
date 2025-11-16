@@ -1,55 +1,63 @@
 "use client";
 
-import { motion } from 'motion/react';
+import { motion } from "motion/react";
+import { Mail, Github, Linkedin, Instagram, Facebook } from "lucide-react";
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
+        behavior: "smooth",
+        block: "start",
       });
     }
   };
 
   const quickLinks = [
-    { id: 'hero', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'services', label: 'Services' },
-    { id: 'contact', label: 'Contact' }
+    { id: "hero", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "skills", label: "Skills" },
+    { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
+    { id: "services", label: "Services" },
+    { id: "contact", label: "Contact" },
   ];
 
   const socialLinks = [
     {
-      name: 'LinkedIn',
-      url: 'https://linkedin.com/in/mdsadiqueshakeel',
-      icon: '💼'
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/sadique-shakeel-a5bb29266/",
+      icon: <Linkedin size={20} className="text-primary" />,
     },
     {
-      name: 'GitHub',
-      url: 'https://github.com/mdsadiqueshakeel',
-      icon: '💻'
+      name: "GitHub",
+      url: "https://github.com/mdsadiqueshakeel",
+      icon: <Github size={20} className="text-primary" />,
     },
     {
-      name: 'Email',
-      url: 'mailto:mdsadiqueshakeel@gmail.com',
-      icon: '📧'
+      name: "Instagram",
+      url: "https://www.instagram.com/sadique__shakeel/",
+      icon: <Instagram size={20} className="text-primary" />,
     },
     {
-      name: 'WhatsApp',
-      url: 'https://wa.me/916202488640',
-      icon: '📱'
-    }
+      name: "Facebook",
+      url: "https://www.facebook.com/profile.php?id=100025187237972",
+      icon: <Facebook size={20} className="text-primary" />,
+    },
+    {
+      name: "Email",
+      url: "mailto:mdsadiqueshakeel@gmail.com",
+      icon: <Mail size={20} className="text-primary" />,
+    },
   ];
 
   return (
     <footer className="bg-background border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
         <div className="grid md:grid-cols-3 gap-8">
+
           {/* Brand Section */}
           <motion.div
             className="space-y-4"
@@ -62,9 +70,11 @@ const Footer = () => {
               Md Sadique Shakeel
             </div>
             <p className="text-muted-foreground leading-relaxed">
-              Fullstack Developer specializing in scalable web applications, 
+              Fullstack Developer specializing in scalable web applications,
               system architecture, and automation solutions.
             </p>
+
+            {/* Social Icons */}
             <div className="flex space-x-4">
               {socialLinks.map((link) => (
                 <motion.a
@@ -76,7 +86,7 @@ const Footer = () => {
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <span className="text-lg">{link.icon}</span>
+                  {link.icon}
                 </motion.a>
               ))}
             </div>
@@ -90,7 +100,10 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg font-semibold text-foreground">Quick Links</h3>
+            <h3 className="text-lg font-semibold text-foreground">
+              Quick Links
+            </h3>
+
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.id}>
@@ -114,28 +127,23 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg font-semibold text-foreground">Get in Touch</h3>
+            <h3 className="text-lg font-semibold text-foreground">
+              Get in Touch
+            </h3>
+
             <div className="space-y-3">
+              {/* Email */}
               <div className="flex items-center space-x-3">
-                <span className="text-primary">📧</span>
-                <a 
+                <Mail size={20} className="text-primary" />
+                <a
                   href="mailto:mdsadiqueshakeel@gmail.com"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   mdsadiqueshakeel@gmail.com
                 </a>
               </div>
-              <div className="flex items-center space-x-3">
-                <span className="text-primary">📱</span>
-                <a 
-                  href="https://wa.me/916202488640"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  +91-6202488640
-                </a>
-              </div>
+
+              {/* Country */}
               <div className="flex items-center space-x-3">
                 <span className="text-primary">📍</span>
                 <span className="text-muted-foreground">India</span>
@@ -155,22 +163,23 @@ const Footer = () => {
           <p className="text-muted-foreground text-center md:text-left">
             © {new Date().getFullYear()} Md Sadique Shakeel. All rights reserved.
           </p>
-          
+
           <div className="flex space-x-6">
             <button
-              onClick={() => scrollToSection('hero')}
+              onClick={() => scrollToSection("hero")}
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               Privacy Policy
             </button>
             <button
-              onClick={() => scrollToSection('hero')}
+              onClick={() => scrollToSection("hero")}
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               Terms of Service
             </button>
           </div>
         </motion.div>
+
       </div>
     </footer>
   );

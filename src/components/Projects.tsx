@@ -12,53 +12,70 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "GrowthAffinity - MLM System",
-      description: "A comprehensive Multi-Level Marketing platform built with MERN stack, featuring user management, commission tracking, and real-time analytics.",
-      technologies: ["MongoDB", "Express", "React", "Node.js", "JWT", "Redis"],
-      liveUrl: "https://growthaffinitymarketing.com",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2426&q=80",
-      featured: true
+      title: "MadarsaArabia – Education Platform",
+      description:
+        "End-to-end education management platform built with Next.js and Node.js. Includes course management, secure authentication, admin dashboards, and optimized backend flows for scalability.",
+      technologies: ["Next.js", "Node.js", "MongoDB", "JWT", "Tailwind", "Redis"],
+      liveUrl: "https://madarsaarabia.in",
+      image: "Madarsa.webp",
+      featured: true,
     },
     {
-      title: "IndianPly - E-commerce Platform",
-      description: "Modern e-commerce solution for plywood products with inventory management, payment integration, and order tracking system.",
-      technologies: ["Next.js", "MongoDB", "Stripe", "Tailwind CSS", "AWS"],
-      liveUrl: "https://indianply.in",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-      featured: true
+      title: "Gramflix – OTT Streaming Platform",
+      description:
+        "A high-performance content streaming platform featuring secure video delivery, admin analytics, user subscriptions, and optimized database design for fast content access.",
+      technologies: ["Next.js", "MongoDB", "Node.js", "Stripe", "Cloudinary"],
+      liveUrl: "https://gramflix.in",
+      image: "gramflix.webp",
+      featured: true,
     },
     {
-      title: "Wanderlust (Airbnb Replica)",
-      description: "Full-featured property rental platform with user authentication, booking system, and interactive maps using Leaflet.",
-      technologies: ["Node.js", "Express", "MongoDB", "EJS", "Leaflet", "Cloudinary"],
-      githubUrl: "https://github.com/mdsadique/wanderlust",
-      image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-      featured: false
+      title: "DIYMattress – 3D Custom Mattress Builder",
+      description:
+        "A fully interactive 3D mattress customization tool allowing users to design layers, visualize materials, and generate dynamic pricing. Built with React Three Fiber and API-driven configuration.",
+      technologies: ["Next.js", "React Three Fiber", "Node.js", "MongoDB"],
+      liveUrl: "#",
+      githubUrl: "",
+      image: "3D_Matress.webp",
+      featured: false,
     },
     {
-      title: "WhatsApp Chatbot for Scholarship Status",
-      description: "Automated chatbot for checking scholarship application status, built with n8n workflows and WhatsApp Business API.",
-      technologies: ["n8n", "WhatsApp API", "Node.js", "MongoDB", "Automation"],
+      title: "n8n WhatsApp Automation Bot",
+      description:
+        "Automated workflow that responds to WhatsApp queries, checks scholarship status, handles lead pipelines, and integrates MongoDB + APIs. Built using n8n and Node.js.",
+      technologies: ["n8n", "Node.js", "MongoDB", "WhatsApp API", "Automation"],
       githubUrl: "https://github.com/mdsadique/scholarship-bot",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2339&q=80",
-      featured: false
-    }
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=2339&q=80",
+      featured: false,
+    },
+    {
+      title: "CV AI – Smart Resume Analyzer",
+      description:
+        "AI-powered resume analysis tool that extracts skills, evaluates job match score, and provides improvement suggestions using LLM-based embeddings & vector search.",
+      technologies: ["Next.js", "Python", "LLM APIs", "Embeddings", "Vector DB"],
+      githubUrl: "#",
+      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981d?auto=format&fit=crop&w=2340&q=80",
+      featured: false,
+    },
   ];
 
   return (
     <section id="projects" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         <motion.div
           ref={ref}
           className="space-y-12"
           initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
+          
+          {/* Section Header */}
           <motion.div
             className="text-center space-y-4"
             initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold">
@@ -66,23 +83,23 @@ const Projects = () => {
               <span className="text-foreground">Projects</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A showcase of production-ready applications and innovative solutions
+              Real-world products, automation systems, and platforms delivered end-to-end.
             </p>
           </motion.div>
 
+          {/* Grid */}
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
-                className={`${project.featured ? 'md:col-span-1' : 'md:col-span-1'} group`}
+                className="group"
                 initial={{ opacity: 0, y: 50 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-                transition={{ duration: 0.8, delay: 0.4 + (index * 0.2) }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.4 + index * 0.2 }}
               >
                 <motion.div
                   className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-colors"
                   whileHover={{ y: -10, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <div className="relative overflow-hidden h-48">
                     <ImageWithFallback
@@ -92,17 +109,17 @@ const Projects = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                   </div>
-                  
+
                   <div className="p-6 space-y-4">
                     <div>
                       <h3 className="text-xl font-bold text-foreground mb-2">
                         {project.title}
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p className="text-muted-foreground">
                         {project.description}
                       </p>
                     </div>
-                    
+
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
                         <span
@@ -113,20 +130,21 @@ const Projects = () => {
                         </span>
                       ))}
                     </div>
-                    
+
                     <div className="flex space-x-3 pt-2">
                       {project.liveUrl && (
                         <Button
-                          onClick={() => window.open(project.liveUrl, '_blank')}
+                          onClick={() => window.open(project.liveUrl, "_blank")}
                           className="bg-primary hover:bg-primary/90 text-primary-foreground"
                           size="sm"
                         >
                           Live Demo
                         </Button>
                       )}
+
                       {project.githubUrl && (
                         <Button
-                          onClick={() => window.open(project.githubUrl, '_blank')}
+                          onClick={() => window.open(project.githubUrl, "_blank")}
                           variant="outline"
                           className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                           size="sm"
@@ -136,11 +154,14 @@ const Projects = () => {
                       )}
                     </div>
                   </div>
+
                 </motion.div>
               </motion.div>
             ))}
           </div>
+
         </motion.div>
+
       </div>
     </section>
   );

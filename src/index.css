@@ -2193,3 +2193,16 @@ html {
   syntax: "*";
   inherits: false
 }
+
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ff6b35;
+  border-radius: 999px;
+}
+ .mesh-bg {
+  background: radial-gradient(circle at 20% 30%, #ff6b35 0%, transparent 40%),
+              radial-gradient(circle at 80% 70%, #ffab35 0%, transparent 40%);
+}

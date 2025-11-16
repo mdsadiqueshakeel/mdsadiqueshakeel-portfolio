@@ -11,90 +11,89 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-secondary/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         <motion.div
           ref={ref}
           className="text-center space-y-12"
           initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <motion.div
-            className="space-y-6"
+          {/* Title */}
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold"
             initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold">
-              <span className="gradient-text">Crafting Scalable Systems</span>
-              <br />
-              <span className="text-foreground">& Meaningful Digital Experiences</span>
-            </h2>
-          </motion.div>
+            <span className="gradient-text">Engineer</span>{" "}
+            <span className="text-foreground">Focused on Scalable Systems</span>
+          </motion.h2>
 
+          {/* Description */}
           <motion.div
             className="max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Enthusiastic software engineering student & freelancer with a passion for building scalable, 
-              production-ready applications. Strong expertise in backend development with Node.js, Express, 
-              MongoDB, Redis, Microservices, and System Design, complemented by modern frontend skills in 
-              React.js, Next.js, and Tailwind CSS. I specialize in automation using n8n workflows and AWS 
-              cloud services, helping businesses transform their ideas into robust digital solutions.
+              I’m a software engineering student and full-stack developer 
+              specializing in backend architecture, distributed systems, 
+              automation workflows, and cloud-native deployments.  
+              I build production-ready applications using the MERN stack, 
+              scalable APIs with Node.js & Express, and efficient data layers 
+              with MongoDB and Redis.  
+              <br /><br />
+              My work extends to automation using n8n, AWS services, containerization, 
+              and modern DevOps practices. I focus on solving real-world problems 
+              with clean engineering and performance-oriented design.
             </p>
           </motion.div>
 
+          {/* 3 Feature Highlights */}
           <motion.div
             className="grid md:grid-cols-3 gap-8 pt-12"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
+            {/* Full-stack */}
             <motion.div
               className="bg-card border border-border rounded-lg p-6 text-center"
               whileHover={{ y: -5, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-primary text-2xl font-bold">🚀</span>
-              </div>
               <h3 className="text-xl font-semibold mb-2">Full-Stack Development</h3>
               <p className="text-muted-foreground">
-                End-to-end web application development using modern technologies and best practices.
+                Building modern, scalable web applications using MERN, Next.js, TypeScript, and clean architecture.
               </p>
             </motion.div>
 
+            {/* Backend + Systems */}
             <motion.div
               className="bg-card border border-border rounded-lg p-6 text-center"
               whileHover={{ y: -5, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-primary text-2xl font-bold">⚡</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">System Architecture</h3>
+              <h3 className="text-xl font-semibold mb-2">Backend & System Design</h3>
               <p className="text-muted-foreground">
-                Designing scalable, maintainable systems with microservices and cloud-native solutions.
+                Designing performant APIs, microservices, caching layers, queues, 
+                and distributed system components.
               </p>
             </motion.div>
 
+            {/* DevOps + Cloud */}
             <motion.div
               className="bg-card border border-border rounded-lg p-6 text-center"
               whileHover={{ y: -5, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-primary text-2xl font-bold">🔧</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Automation & DevOps</h3>
+              <h3 className="text-xl font-semibold mb-2">Cloud & Automation</h3>
               <p className="text-muted-foreground">
-                Streamlining workflows with n8n automation and AWS deployment strategies.
+                Deploying on AWS, containerizing with Docker, workflow automation using n8n, and CI/CD pipelines.
               </p>
             </motion.div>
           </motion.div>
         </motion.div>
+
       </div>
     </section>
   );
