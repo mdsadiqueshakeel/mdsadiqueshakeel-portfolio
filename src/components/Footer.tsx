@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Mail, Github, Linkedin, Instagram, Facebook } from "lucide-react";
+import { Mail, Github, Linkedin, Instagram, Facebook,Code2 } from "lucide-react";
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -30,6 +30,11 @@ const Footer = () => {
       url: "https://www.linkedin.com/in/sadique-shakeel-a5bb29266/",
       icon: <Linkedin size={20} className="text-primary" />,
     },
+    {
+  name: "LeetCode",
+  url: "https://leetcode.com/u/sadiqueShakeel/",
+  icon: <Code2 size={20} className="text-primary" />,
+},
     {
       name: "GitHub",
       url: "https://github.com/mdsadiqueshakeel",
